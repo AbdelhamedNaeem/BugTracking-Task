@@ -94,9 +94,11 @@
 		98317CB32D2B219900322D04 /* BugTracking-Task */ = {
 			isa = PBXGroup;
 			children = (
-				98317CB42D2B219900322D04 /* BugTracking_TaskApp.swift */,
+				98317CE32D2B429300322D04 /* App */,
+				98317CE92D2B437400322D04 /* Resources */,
+				98317CE42D2B42CB00322D04 /* InfraStructure */,
+				98317CEA2D2B43AA00322D04 /* Core */,
 				98317CB62D2B219900322D04 /* ContentView.swift */,
-				98317CB82D2B219A00322D04 /* Assets.xcassets */,
 				98317CBA2D2B219A00322D04 /* Preview Content */,
 			);
 			path = "BugTracking-Task";
@@ -127,6 +129,132 @@
 			path = "BugTracking-TaskUITests";
 			sourceTree = "<group>";
 		};
+		98317CE32D2B429300322D04 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				98317CB42D2B219900322D04 /* BugTracking_TaskApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		98317CE42D2B42CB00322D04 /* InfraStructure */ = {
+			isa = PBXGroup;
+			children = (
+				98317CE52D2B431100322D04 /* Utilities */,
+				98317CE62D2B432100322D04 /* DependencyManager */,
+				98317CE72D2B434200322D04 /* Network */,
+				98317CE82D2B434E00322D04 /* AppErrors */,
+			);
+			path = InfraStructure;
+			sourceTree = "<group>";
+		};
+		98317CE52D2B431100322D04 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		98317CE62D2B432100322D04 /* DependencyManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DependencyManager;
+			sourceTree = "<group>";
+		};
+		98317CE72D2B434200322D04 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		98317CE82D2B434E00322D04 /* AppErrors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppErrors;
+			sourceTree = "<group>";
+		};
+		98317CE92D2B437400322D04 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98317CB82D2B219A00322D04 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		98317CEA2D2B43AA00322D04 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				98317CEB2D2B43B400322D04 /* Dommain */,
+				98317CEC2D2B43BA00322D04 /* Data */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		98317CEB2D2B43B400322D04 /* Dommain */ = {
+			isa = PBXGroup;
+			children = (
+				98317CED2D2B43D800322D04 /* UseCases */,
+				98317CEE2D2B43E100322D04 /* Entities */,
+				98317CEF2D2B43EC00322D04 /* Repositories+Contract */,
+			);
+			path = Dommain;
+			sourceTree = "<group>";
+		};
+		98317CEC2D2B43BA00322D04 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				98317CF02D2B442800322D04 /* Repository */,
+				98317CF12D2B443100322D04 /* NetworkManager */,
+				98317CF22D2B443C00322D04 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		98317CED2D2B43D800322D04 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		98317CEE2D2B43E100322D04 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		98317CEF2D2B43EC00322D04 /* Repositories+Contract */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Repositories+Contract";
+			sourceTree = "<group>";
+		};
+		98317CF02D2B442800322D04 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		98317CF12D2B443100322D04 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		98317CF22D2B443C00322D04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +271,8 @@
 			dependencies = (
 			);
 			name = "BugTracking-Task";
+			packageProductDependencies = (
+			);
 			productName = "BugTracking-Task";
 			productReference = 98317CB12D2B219900322D04 /* BugTracking-Task.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +345,8 @@
 				Base,
 			);
 			mainGroup = 98317CA82D2B219900322D04;
+			packageReferences = (
+			);
 			productRefGroup = 98317CB22D2B219900322D04 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
