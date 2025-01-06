@@ -11,6 +11,7 @@ class GoogleUserEntity: Codable {
     var id: String
     var name: String
     var email: String
+//    TODO: save accessToken in key chain -
     var accessToken: String
 
     private static let userDefaultsManager: UserDefaultsManaging = UserDefaultsManager()

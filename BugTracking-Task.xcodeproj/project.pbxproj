@@ -29,6 +29,7 @@
 		9885A2202D2B5E12006D4AD9 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A21F2D2B5E12006D4AD9 /* DependencyManager.swift */; };
 		9885A2222D2B6417006D4AD9 /* UIKitPresentationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2212D2B6417006D4AD9 /* UIKitPresentationProvider.swift */; };
 		9885A2252D2B6D1B006D4AD9 /* CreateBugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2242D2B6D1B006D4AD9 /* CreateBugView.swift */; };
+		9885A2272D2BEB7C006D4AD9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2262D2BEB7C006D4AD9 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		9885A21F2D2B5E12006D4AD9 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		9885A2212D2B6417006D4AD9 /* UIKitPresentationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitPresentationProvider.swift; sourceTree = "<group>"; };
 		9885A2242D2B6D1B006D4AD9 /* CreateBugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBugView.swift; sourceTree = "<group>"; };
+		9885A2262D2BEB7C006D4AD9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +131,8 @@
 				98317CE32D2B429300322D04 /* App */,
 				98317CE92D2B437400322D04 /* Resources */,
 				98317CE42D2B42CB00322D04 /* InfraStructure */,
-				98317CEA2D2B43AA00322D04 /* Core */,
 				9885A20D2D2B4F54006D4AD9 /* Scenes */,
+				98317CEA2D2B43AA00322D04 /* Core */,
 				98317CBA2D2B219A00322D04 /* Preview Content */,
 			);
 			path = "BugTracking-Task";
@@ -188,6 +190,7 @@
 				9885A2092D2B4BC6006D4AD9 /* UserDefaultManager.swift */,
 				9885A20B2D2B4E0A006D4AD9 /* Constants.swift */,
 				9885A2212D2B6417006D4AD9 /* UIKitPresentationProvider.swift */,
+				9885A2262D2BEB7C006D4AD9 /* ImagePicker.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				9885A2152D2B534B006D4AD9 /* GoogleSignInServiceProtocol.swift in Sources */,
 				9885A20A2D2B4BC6006D4AD9 /* UserDefaultManager.swift in Sources */,
 				9885A2132D2B52FE006D4AD9 /* GoogleUserEntity.swift in Sources */,
+				9885A2272D2BEB7C006D4AD9 /* ImagePicker.swift in Sources */,
 				9885A2202D2B5E12006D4AD9 /* DependencyManager.swift in Sources */,
 				98317CB52D2B219900322D04 /* BugTracking_TaskApp.swift in Sources */,
 			);

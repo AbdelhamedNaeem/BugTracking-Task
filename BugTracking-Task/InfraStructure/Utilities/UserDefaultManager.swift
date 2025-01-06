@@ -11,6 +11,7 @@ protocol UserDefaultsManaging {
     func saveUser(_ user: GoogleUserEntity)
     func removeUser()
     func isUserSignedIn() -> Bool
+    func loadUser() -> GoogleUserEntity?
 }
 
 class UserDefaultsManager: UserDefaultsManaging {
