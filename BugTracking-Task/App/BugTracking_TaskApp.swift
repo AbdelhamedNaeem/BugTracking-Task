@@ -11,7 +11,7 @@ import SwiftUI
 struct BugTracking_TaskApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DependencyManager.createGoogleSignInView()
         }
     }
 }
