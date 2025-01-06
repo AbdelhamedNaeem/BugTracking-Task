@@ -10,6 +10,7 @@ import Foundation
 protocol UserDefaultsManaging {
     func saveUser(_ user: GoogleUserEntity)
     func removeUser()
+    func isUserSignedIn() -> Bool
 }
 
 class UserDefaultsManager: UserDefaultsManaging {
@@ -34,7 +35,7 @@ class UserDefaultsManager: UserDefaultsManaging {
         userDefaults.synchronize()
     }
 
-    static func loadUser() -> GoogleUserEntity? {
+    func loadUser() -> GoogleUserEntity? {
         let userDefaults = UserDefaults.standard
         if let data = userDefaults.data(forKey: UserDefaultsKeys.googleUserEntity.rawValue) {
             do {
@@ -44,5 +45,12 @@ class UserDefaultsManager: UserDefaultsManaging {
             }
         }
         return nil
+    }
+    
+    func isUserSignedIn() -> Bool {
+        guard ((loadUser()?.accessToken) != nil) else {
+            return false
+        }
+        return true
     }
 }

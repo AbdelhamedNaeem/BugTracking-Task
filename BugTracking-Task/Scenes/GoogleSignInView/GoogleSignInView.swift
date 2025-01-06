@@ -16,26 +16,39 @@ struct GoogleSignInView: View {
     }
     
     var body: some View {
-        VStack {
-            Spacer()
+        NavigationView {
+            ZStack {
+                NavigationLink(
+                    destination: CreateBugView(),
+                    isActive: Binding(
+                        get: { viewModel.navigationState == .createBug },
+                        set: { if !$0 { viewModel.navigationState = .none } }
+                    )
+                ) {
+                    EmptyView()
+                }
 
-            Text("Welcome to Bug Tracking App")
-                .font(.title)
+                VStack {
+                    Spacer()
+
+                    Text("Welcome to Bug Tracking App")
+                        .font(.title)
+                        .padding()
+                                
+                    if viewModel.isLoading {
+                        ProgressView("Loading...")
+                            .padding()
+                    } else {
+                        GoogleSignInButton(action: handleGoogleSignIn)
+                            .padding(.horizontal, 40)
+                    }
+
+                    Spacer()
+                }
                 .padding()
-                        
-            if viewModel.isLoading {
-                ProgressView("Loading...")
-                    .padding()
-            } else {
-                GoogleSignInButton(action: handleGoogleSignIn)
-                    .padding(.horizontal, 40)
             }
-
-            Spacer()
         }
-        .padding()
     }
-
 
     private func handleGoogleSignIn() {
         Task {

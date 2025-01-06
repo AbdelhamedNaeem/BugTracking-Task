@@ -41,7 +41,8 @@ final class GoogleSignInService: GoogleSignInServiceProtocol {
                         let userEntity = GoogleUserEntity(
                             id: user.userID ?? "",
                             name: user.profile?.name ?? "",
-                            email: user.profile?.email ?? ""
+                            email: user.profile?.email ?? "", 
+                            accessToken: user.accessToken.tokenString 
                         )
                         continuation.resume(returning: userEntity)
                     } else {

@@ -7,8 +7,14 @@
 
 import Foundation
 
+enum NavigationState {
+    case none
+    case createBug
+}
+
 class GoogleSignInViewModel: ObservableObject {
     
+    @Published var navigationState: NavigationState = .none
     @Published var isLoading: Bool = false
     
     private let googleSignInUseCase: GoogleSignInUseCase
@@ -24,10 +30,15 @@ class GoogleSignInViewModel: ObservableObject {
         do{
             let user = try await self.googleSignInUseCase.execute(nil)
             print("Signed in user: \(user?.email ?? "")")
+            print("Signed in user token: \(user?.accessToken ?? "")")
+
             await MainActor.run {
                 isLoading = false
             }
         }catch let error{
+            await MainActor.run {
+                isLoading = false
+            }
             print("error: \(error)")
         }
     }
