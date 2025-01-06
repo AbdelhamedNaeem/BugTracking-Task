@@ -13,7 +13,7 @@ struct BugTracking_TaskApp: App {
     var body: some Scene {
         WindowGroup {
             if userDefaultManager.isUserSignedIn() {
-                CreateBugView()
+                DependencyManager.createBugView()
             }else {
                 DependencyManager.createGoogleSignInView()
             }

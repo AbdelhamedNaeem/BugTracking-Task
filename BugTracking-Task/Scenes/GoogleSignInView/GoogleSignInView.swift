@@ -18,16 +18,6 @@ struct GoogleSignInView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                NavigationLink(
-                    destination: CreateBugView(),
-                    isActive: Binding(
-                        get: { viewModel.navigationState == .createBug },
-                        set: { if !$0 { viewModel.navigationState = .none } }
-                    )
-                ) {
-                    EmptyView()
-                }
-
                 VStack {
                     Spacer()
 

@@ -21,4 +21,13 @@ enum DependencyManager {
         return GoogleSignInView(viewModel: signinViewModel)
     }
     
+    static func createBugView() -> some View{
+        let imgurRepository = ImgurRepository()
+        let uploadImageUseCase = UploadImageUseCase(imageRepository: imgurRepository)
+        let createBugViewModel = CreateBugViewModel(uploadImageUseCase: uploadImageUseCase)
+        
+        return CreateBugView(viewModel: createBugViewModel)
+    }
+    
+    
 }

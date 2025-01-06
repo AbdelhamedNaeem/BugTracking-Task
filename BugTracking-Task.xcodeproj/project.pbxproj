@@ -30,6 +30,16 @@
 		9885A2222D2B6417006D4AD9 /* UIKitPresentationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2212D2B6417006D4AD9 /* UIKitPresentationProvider.swift */; };
 		9885A2252D2B6D1B006D4AD9 /* CreateBugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2242D2B6D1B006D4AD9 /* CreateBugView.swift */; };
 		9885A2272D2BEB7C006D4AD9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2262D2BEB7C006D4AD9 /* ImagePicker.swift */; };
+		9885A2292D2BF1A2006D4AD9 /* HttpMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2282D2BF1A2006D4AD9 /* HttpMethods.swift */; };
+		9885A22B2D2BF1E1006D4AD9 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A22A2D2BF1E1006D4AD9 /* EndPoint.swift */; };
+		9885A22D2D2BF24C006D4AD9 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A22C2D2BF24C006D4AD9 /* HttpClient.swift */; };
+		9885A22F2D2BF283006D4AD9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A22E2D2BF283006D4AD9 /* RequestError.swift */; };
+		9885A2312D2C1B87006D4AD9 /* ImgurResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2302D2C1B87006D4AD9 /* ImgurResponse.swift */; };
+		9885A2332D2C241D006D4AD9 /* ImgurRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2322D2C241D006D4AD9 /* ImgurRepository.swift */; };
+		9885A2352D2C2455006D4AD9 /* ImageRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2342D2C2455006D4AD9 /* ImageRepositoryProtocol.swift */; };
+		9885A2372D2C24E7006D4AD9 /* ImgurUploadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2362D2C24E7006D4AD9 /* ImgurUploadEndpoint.swift */; };
+		9885A2392D2C2581006D4AD9 /* UploadImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2382D2C2581006D4AD9 /* UploadImageUseCase.swift */; };
+		9885A23B2D2C31EB006D4AD9 /* CreateBugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A23A2D2C31EB006D4AD9 /* CreateBugViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +85,16 @@
 		9885A2212D2B6417006D4AD9 /* UIKitPresentationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitPresentationProvider.swift; sourceTree = "<group>"; };
 		9885A2242D2B6D1B006D4AD9 /* CreateBugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBugView.swift; sourceTree = "<group>"; };
 		9885A2262D2BEB7C006D4AD9 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9885A2282D2BF1A2006D4AD9 /* HttpMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethods.swift; sourceTree = "<group>"; };
+		9885A22A2D2BF1E1006D4AD9 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		9885A22C2D2BF24C006D4AD9 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		9885A22E2D2BF283006D4AD9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		9885A2302D2C1B87006D4AD9 /* ImgurResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurResponse.swift; sourceTree = "<group>"; };
+		9885A2322D2C241D006D4AD9 /* ImgurRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurRepository.swift; sourceTree = "<group>"; };
+		9885A2342D2C2455006D4AD9 /* ImageRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepositoryProtocol.swift; sourceTree = "<group>"; };
+		9885A2362D2C24E7006D4AD9 /* ImgurUploadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurUploadEndpoint.swift; sourceTree = "<group>"; };
+		9885A2382D2C2581006D4AD9 /* UploadImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageUseCase.swift; sourceTree = "<group>"; };
+		9885A23A2D2C31EB006D4AD9 /* CreateBugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBugViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +226,9 @@
 		98317CE72D2B434200322D04 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9885A2282D2BF1A2006D4AD9 /* HttpMethods.swift */,
+				9885A22A2D2BF1E1006D4AD9 /* EndPoint.swift */,
+				9885A22C2D2BF24C006D4AD9 /* HttpClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -213,6 +236,7 @@
 		98317CE82D2B434E00322D04 /* AppErrors */ = {
 			isa = PBXGroup;
 			children = (
+				9885A22E2D2BF283006D4AD9 /* RequestError.swift */,
 			);
 			path = AppErrors;
 			sourceTree = "<group>";
@@ -259,6 +283,7 @@
 			children = (
 				9885A2162D2B54BF006D4AD9 /* GoogleSignInUseCase.swift */,
 				9885A2182D2B54EE006D4AD9 /* UseCase+Contract.swift */,
+				9885A2382D2C2581006D4AD9 /* UploadImageUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -275,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				9885A2142D2B534B006D4AD9 /* GoogleSignInServiceProtocol.swift */,
+				9885A2342D2C2455006D4AD9 /* ImageRepositoryProtocol.swift */,
 			);
 			path = "Repositories+Contract";
 			sourceTree = "<group>";
@@ -283,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				9885A21A2D2B55E5006D4AD9 /* GoogleSignInRepository.swift */,
+				9885A2322D2C241D006D4AD9 /* ImgurRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -291,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				9885A2102D2B52BF006D4AD9 /* GoogleSignInService.swift */,
+				9885A2362D2C24E7006D4AD9 /* ImgurUploadEndpoint.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -298,6 +326,7 @@
 		98317CF22D2B443C00322D04 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9885A2302D2C1B87006D4AD9 /* ImgurResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -331,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				9885A2242D2B6D1B006D4AD9 /* CreateBugView.swift */,
+				9885A23A2D2C31EB006D4AD9 /* CreateBugViewModel.swift */,
 			);
 			path = CreateBugView;
 			sourceTree = "<group>";
@@ -472,21 +502,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9885A2312D2C1B87006D4AD9 /* ImgurResponse.swift in Sources */,
 				9885A20C2D2B4E0A006D4AD9 /* Constants.swift in Sources */,
 				9885A2222D2B6417006D4AD9 /* UIKitPresentationProvider.swift in Sources */,
 				9885A2082D2B4B46006D4AD9 /* AppDelegate.swift in Sources */,
 				9885A2172D2B54BF006D4AD9 /* GoogleSignInUseCase.swift in Sources */,
 				9885A2192D2B54EE006D4AD9 /* UseCase+Contract.swift in Sources */,
 				9885A21B2D2B55E5006D4AD9 /* GoogleSignInRepository.swift in Sources */,
+				9885A2392D2C2581006D4AD9 /* UploadImageUseCase.swift in Sources */,
+				9885A2332D2C241D006D4AD9 /* ImgurRepository.swift in Sources */,
 				9885A2112D2B52BF006D4AD9 /* GoogleSignInService.swift in Sources */,
 				98317CB72D2B219900322D04 /* GoogleSignInView.swift in Sources */,
+				9885A2372D2C24E7006D4AD9 /* ImgurUploadEndpoint.swift in Sources */,
+				9885A22D2D2BF24C006D4AD9 /* HttpClient.swift in Sources */,
 				9885A2252D2B6D1B006D4AD9 /* CreateBugView.swift in Sources */,
 				9885A21E2D2B5A83006D4AD9 /* GoogleSignInViewModel.swift in Sources */,
 				9885A2152D2B534B006D4AD9 /* GoogleSignInServiceProtocol.swift in Sources */,
 				9885A20A2D2B4BC6006D4AD9 /* UserDefaultManager.swift in Sources */,
+				9885A22B2D2BF1E1006D4AD9 /* EndPoint.swift in Sources */,
 				9885A2132D2B52FE006D4AD9 /* GoogleUserEntity.swift in Sources */,
+				9885A23B2D2C31EB006D4AD9 /* CreateBugViewModel.swift in Sources */,
 				9885A2272D2BEB7C006D4AD9 /* ImagePicker.swift in Sources */,
+				9885A22F2D2BF283006D4AD9 /* RequestError.swift in Sources */,
 				9885A2202D2B5E12006D4AD9 /* DependencyManager.swift in Sources */,
+				9885A2352D2C2455006D4AD9 /* ImageRepositoryProtocol.swift in Sources */,
+				9885A2292D2BF1A2006D4AD9 /* HttpMethods.swift in Sources */,
 				98317CB52D2B219900322D04 /* BugTracking_TaskApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

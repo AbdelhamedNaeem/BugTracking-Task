@@ -9,7 +9,7 @@ import Foundation
 
 final class GoogleSignInUseCase: UseCaseProtocol {
     
-    typealias Input = Void
+    typealias Input = Int
     typealias Item = GoogleUserEntity
 
     private let repository: GoogleSignInRepositoryProtocol
@@ -18,7 +18,7 @@ final class GoogleSignInUseCase: UseCaseProtocol {
         self.repository = repository
     }
     
-    func execute(_ input: Void?) async throws -> GoogleUserEntity? {
+    func execute(_ input: Int) async throws -> GoogleUserEntity? {
         try await repository.signInUser()
     }
 }

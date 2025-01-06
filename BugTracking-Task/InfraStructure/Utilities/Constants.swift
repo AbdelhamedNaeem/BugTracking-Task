@@ -14,3 +14,8 @@ enum UserDefaultKeys: String {
 //    TODO: must saved in keychain -
     case accessToken = "accessToken"
 }
+
+
+enum URLEndpoints {
+    static let imgurUrl = "https://api.imgur.com/3/image"
+}

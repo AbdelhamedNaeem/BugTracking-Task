@@ -8,7 +8,7 @@
 import Foundation
 
 protocol UseCaseProtocol {
-    associatedtype Input = Void
+    associatedtype Input
     associatedtype Item
-    func execute(_ input: Input?) async throws -> Item?
+    func execute(_ input: Input) async throws -> Item?
 }

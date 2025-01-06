@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CreateBugView: View {
     
+    @ObservedObject var viewModel: CreateBugViewModel
     @State private var bugDescription: String = ""
     @State private var selectedImage: UIImage? = nil
     @State private var isImagePickerPresented: Bool = false
@@ -20,11 +21,17 @@ struct CreateBugView: View {
         return userdefaultManager.loadUser()?.name ?? ""
     }
     
+    init(viewModel: CreateBugViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         ZStack {
             VStack {
                 HStack {
                     Text("Hello, \(userName)")
+                        .bold()
+
                     Spacer()
                 }
                 .padding()
@@ -107,10 +114,18 @@ struct CreateBugView: View {
     }
     
     private func submitBug() {
-        
+        Task {
+            if let image = selectedImage {
+                do {
+                    try await viewModel.uploadBugImage(image: image)
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    CreateBugView()
+    DependencyManager.createBugView()
 }
