@@ -40,6 +40,10 @@
 		9885A2372D2C24E7006D4AD9 /* ImgurUploadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2362D2C24E7006D4AD9 /* ImgurUploadEndpoint.swift */; };
 		9885A2392D2C2581006D4AD9 /* UploadImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2382D2C2581006D4AD9 /* UploadImageUseCase.swift */; };
 		9885A23B2D2C31EB006D4AD9 /* CreateBugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A23A2D2C31EB006D4AD9 /* CreateBugViewModel.swift */; };
+		9885A23D2D2C4AE1006D4AD9 /* GoogleSheetsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A23C2D2C4AE1006D4AD9 /* GoogleSheetsEndPoint.swift */; };
+		9885A23F2D2C4CB4006D4AD9 /* GoogleSheetsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A23E2D2C4CB4006D4AD9 /* GoogleSheetsModels.swift */; };
+		9885A2412D2C4D27006D4AD9 /* Extension+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2402D2C4D27006D4AD9 /* Extension+Encodable.swift */; };
+		9885A2432D2C4E42006D4AD9 /* GoogleSheetsEndpoint+Contract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2422D2C4E42006D4AD9 /* GoogleSheetsEndpoint+Contract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +99,10 @@
 		9885A2362D2C24E7006D4AD9 /* ImgurUploadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurUploadEndpoint.swift; sourceTree = "<group>"; };
 		9885A2382D2C2581006D4AD9 /* UploadImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageUseCase.swift; sourceTree = "<group>"; };
 		9885A23A2D2C31EB006D4AD9 /* CreateBugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBugViewModel.swift; sourceTree = "<group>"; };
+		9885A23C2D2C4AE1006D4AD9 /* GoogleSheetsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsEndPoint.swift; sourceTree = "<group>"; };
+		9885A23E2D2C4CB4006D4AD9 /* GoogleSheetsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsModels.swift; sourceTree = "<group>"; };
+		9885A2402D2C4D27006D4AD9 /* Extension+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Encodable.swift"; sourceTree = "<group>"; };
+		9885A2422D2C4E42006D4AD9 /* GoogleSheetsEndpoint+Contract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoogleSheetsEndpoint+Contract.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,7 +203,6 @@
 		98317CE42D2B42CB00322D04 /* InfraStructure */ = {
 			isa = PBXGroup;
 			children = (
-				9885A20F2D2B52AD006D4AD9 /* Services */,
 				98317CE52D2B431100322D04 /* Utilities */,
 				98317CE62D2B432100322D04 /* DependencyManager */,
 				98317CE72D2B434200322D04 /* Network */,
@@ -211,6 +218,7 @@
 				9885A20B2D2B4E0A006D4AD9 /* Constants.swift */,
 				9885A2212D2B6417006D4AD9 /* UIKitPresentationProvider.swift */,
 				9885A2262D2BEB7C006D4AD9 /* ImagePicker.swift */,
+				9885A2402D2C4D27006D4AD9 /* Extension+Encodable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -281,8 +289,8 @@
 		98317CED2D2B43D800322D04 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				9885A2162D2B54BF006D4AD9 /* GoogleSignInUseCase.swift */,
 				9885A2182D2B54EE006D4AD9 /* UseCase+Contract.swift */,
+				9885A2162D2B54BF006D4AD9 /* GoogleSignInUseCase.swift */,
 				9885A2382D2C2581006D4AD9 /* UploadImageUseCase.swift */,
 			);
 			path = UseCases;
@@ -319,6 +327,8 @@
 			children = (
 				9885A2102D2B52BF006D4AD9 /* GoogleSignInService.swift */,
 				9885A2362D2C24E7006D4AD9 /* ImgurUploadEndpoint.swift */,
+				9885A23C2D2C4AE1006D4AD9 /* GoogleSheetsEndPoint.swift */,
+				9885A2422D2C4E42006D4AD9 /* GoogleSheetsEndpoint+Contract.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -327,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				9885A2302D2C1B87006D4AD9 /* ImgurResponse.swift */,
+				9885A23E2D2C4CB4006D4AD9 /* GoogleSheetsModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,13 +349,6 @@
 				9885A21C2D2B5A62006D4AD9 /* GoogleSignInView */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		9885A20F2D2B52AD006D4AD9 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		9885A21C2D2B5A62006D4AD9 /* GoogleSignInView */ = {
@@ -506,8 +510,10 @@
 				9885A20C2D2B4E0A006D4AD9 /* Constants.swift in Sources */,
 				9885A2222D2B6417006D4AD9 /* UIKitPresentationProvider.swift in Sources */,
 				9885A2082D2B4B46006D4AD9 /* AppDelegate.swift in Sources */,
+				9885A23F2D2C4CB4006D4AD9 /* GoogleSheetsModels.swift in Sources */,
 				9885A2172D2B54BF006D4AD9 /* GoogleSignInUseCase.swift in Sources */,
 				9885A2192D2B54EE006D4AD9 /* UseCase+Contract.swift in Sources */,
+				9885A23D2D2C4AE1006D4AD9 /* GoogleSheetsEndPoint.swift in Sources */,
 				9885A21B2D2B55E5006D4AD9 /* GoogleSignInRepository.swift in Sources */,
 				9885A2392D2C2581006D4AD9 /* UploadImageUseCase.swift in Sources */,
 				9885A2332D2C241D006D4AD9 /* ImgurRepository.swift in Sources */,
@@ -522,10 +528,12 @@
 				9885A22B2D2BF1E1006D4AD9 /* EndPoint.swift in Sources */,
 				9885A2132D2B52FE006D4AD9 /* GoogleUserEntity.swift in Sources */,
 				9885A23B2D2C31EB006D4AD9 /* CreateBugViewModel.swift in Sources */,
+				9885A2412D2C4D27006D4AD9 /* Extension+Encodable.swift in Sources */,
 				9885A2272D2BEB7C006D4AD9 /* ImagePicker.swift in Sources */,
 				9885A22F2D2BF283006D4AD9 /* RequestError.swift in Sources */,
 				9885A2202D2B5E12006D4AD9 /* DependencyManager.swift in Sources */,
 				9885A2352D2C2455006D4AD9 /* ImageRepositoryProtocol.swift in Sources */,
+				9885A2432D2C4E42006D4AD9 /* GoogleSheetsEndpoint+Contract.swift in Sources */,
 				9885A2292D2BF1A2006D4AD9 /* HttpMethods.swift in Sources */,
 				98317CB52D2B219900322D04 /* BugTracking_TaskApp.swift in Sources */,
 			);

@@ -12,7 +12,7 @@ struct ImgurUploadEndpoint: EndPoint {
     let clientID: String
     
     var path: String {
-        return "https://api.imgur.com/3/image"
+        return URLEndpoints.imgurUrl
     }
     
     var method: RequestMethod {

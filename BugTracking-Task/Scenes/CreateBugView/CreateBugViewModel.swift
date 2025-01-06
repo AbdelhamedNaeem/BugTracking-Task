@@ -17,7 +17,6 @@ class CreateBugViewModel: ObservableObject {
     
     func uploadBugImage(image: UIImage) async throws -> String? {
         let imageUrl = try await self.uploadImageUseCase.execute(image)
-        print("imageUrl -> \(imageUrl ?? "")")
         return imageUrl
     }
 }

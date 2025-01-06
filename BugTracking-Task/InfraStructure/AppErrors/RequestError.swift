@@ -23,3 +23,12 @@ enum ImageUploadError: Error {
     case uploadFailed
     case invalidResponse
 }
+
+enum GoogleSheetsError: Error {
+    case invalidURL
+    case invalidResponse
+    case invalidData
+    case tabCreationFailed
+    case dataAppendingFailed
+    case networkError(Error)
+}

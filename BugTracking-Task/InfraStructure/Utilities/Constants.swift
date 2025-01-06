@@ -7,15 +7,8 @@
 
 import Foundation
 
-enum UserDefaultKeys: String {
-    case userEmail = "userEmail"
-    case isSignedIn = "isSignedIn"
-    
-//    TODO: must saved in keychain -
-    case accessToken = "accessToken"
-}
-
 
 enum URLEndpoints {
+    static let baseURL = "https://sheets.googleapis.com/v4/spreadsheets"
     static let imgurUrl = "https://api.imgur.com/3/image"
 }

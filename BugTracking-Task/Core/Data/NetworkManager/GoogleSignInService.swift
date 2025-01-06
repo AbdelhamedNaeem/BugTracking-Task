@@ -12,7 +12,7 @@ protocol GoogleSignInServiceProtocol {
     func signIn() async throws -> GoogleUserEntity
 }
 
-final class GoogleSignInService: GoogleSignInServiceProtocol {
+struct GoogleSignInService: GoogleSignInServiceProtocol {
     private let presentationProvider: PresentationProvider
 
     init(presentationProvider: PresentationProvider) {
