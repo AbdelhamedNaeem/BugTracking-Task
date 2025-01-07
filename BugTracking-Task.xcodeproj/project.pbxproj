@@ -46,6 +46,7 @@
 		9885A2462D2C5870006D4AD9 /* GoogleSheetsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2452D2C5870006D4AD9 /* GoogleSheetsRepository.swift */; };
 		9885A2482D2C5885006D4AD9 /* GoogleSheetsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2472D2C5885006D4AD9 /* GoogleSheetsRepositoryProtocol.swift */; };
 		9885A24A2D2C5C8A006D4AD9 /* UploadBugDataUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A2492D2C5C8A006D4AD9 /* UploadBugDataUseCase.swift */; };
+		9885A24C2D2D653E006D4AD9 /* UploadBugEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885A24B2D2D653E006D4AD9 /* UploadBugEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		9885A2452D2C5870006D4AD9 /* GoogleSheetsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsRepository.swift; sourceTree = "<group>"; };
 		9885A2472D2C5885006D4AD9 /* GoogleSheetsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		9885A2492D2C5C8A006D4AD9 /* UploadBugDataUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadBugDataUseCase.swift; sourceTree = "<group>"; };
+		9885A24B2D2D653E006D4AD9 /* UploadBugEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadBugEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				9885A2122D2B52FE006D4AD9 /* GoogleUserEntity.swift */,
+				9885A24B2D2D653E006D4AD9 /* UploadBugEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				9885A2202D2B5E12006D4AD9 /* DependencyManager.swift in Sources */,
 				9885A2352D2C2455006D4AD9 /* ImageRepositoryProtocol.swift in Sources */,
 				9885A2292D2BF1A2006D4AD9 /* HttpMethods.swift in Sources */,
+				9885A24C2D2D653E006D4AD9 /* UploadBugEntity.swift in Sources */,
 				98317CB52D2B219900322D04 /* BugTracking_TaskApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

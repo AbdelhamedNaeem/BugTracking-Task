@@ -13,16 +13,7 @@ class CreateBugViewModel: ObservableObject {
 
     let uploadImageUseCase: UploadImageUseCase
     let uploadBugDataUseCase: UploadBugDataUseCase
-    
-    private var userName: String {
-        let userdefaultManager: UserDefaultsManaging = UserDefaultsManager()
-        return userdefaultManager.loadUser()?.name ?? ""
-    }
-    
-    private var sheetId: String {
-        return "11Hu4FtZfXzoEqLt6rtlDQx-7ndE5du-doeuMtPStWkc"
-    }
-
+        
     init(uploadImageUseCase: UploadImageUseCase,
          uploadBugDataUseCase: UploadBugDataUseCase) {
         self.uploadImageUseCase = uploadImageUseCase
@@ -39,16 +30,10 @@ class CreateBugViewModel: ObservableObject {
             await MainActor.run {
                 isLoading = true
             }
-
             do {
-                let imageUrl = try await uploadBugImage(image: image)
-                
-                let bugData = [
-                    ["Bug ID", "Reporter", "Description", "Image URL"],
-                    ["12312313", userName, description, imageUrl ?? ""]
-                ]
-                
-                try await uploadBugDataUseCase.execute((sheetId: sheetId, values: bugData))
+                let imageUrl = try await self.uploadBugImage(image: image)
+                let createdBug = UploadBugEntity(bugDescription: description, bugImage: imageUrl ?? "")
+                try await uploadBugDataUseCase.execute(createdBug)
             } catch {
                 print("Error: \(error.localizedDescription)")
             }

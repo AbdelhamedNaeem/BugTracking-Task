@@ -12,11 +12,17 @@ protocol UserDefaultsManaging {
     func removeUser()
     func isUserSignedIn() -> Bool
     func loadUser() -> GoogleUserEntity?
+    
+    // Methods for managing lastBugID
+    func saveLastBugID(_ id: Int)
+    func loadLastBugID() -> Int
+    func incrementLastBugID() -> Int
 }
 
 class UserDefaultsManager: UserDefaultsManaging {
     private enum UserDefaultsKeys: String {
         case googleUserEntity = "GoogleUserEntity"
+        case lastBugID = "lastBugID"
     }
 
     func saveUser(_ user: GoogleUserEntity) {
@@ -53,5 +59,25 @@ class UserDefaultsManager: UserDefaultsManaging {
             return false
         }
         return true
+    }
+    
+    // Save the lastBugID
+    func saveLastBugID(_ id: Int) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(id, forKey: UserDefaultsKeys.lastBugID.rawValue)
+        userDefaults.synchronize()
+    }
+    
+    // Load the lastBugID
+    func loadLastBugID() -> Int {
+        let userDefaults = UserDefaults.standard
+        return userDefaults.integer(forKey: UserDefaultsKeys.lastBugID.rawValue)
+    }
+    
+    // Increment the lastBugID and return the new value
+    func incrementLastBugID() -> Int {
+        let lastBugID = loadLastBugID() + 1
+        saveLastBugID(lastBugID)
+        return lastBugID
     }
 }
