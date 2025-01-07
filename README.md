@@ -1,5 +1,7 @@
 Bug Reporter App
 
+google sheet link: https://docs.google.com/spreadsheets/d/11Hu4FtZfXzoEqLt6rtlDQx-7ndE5du-doeuMtPStWkc/edit?gid=2128539032#gid=2128539032
+
 Overview
 
 The Bug Reporter App is a Swift and SwiftUI-based application designed to allow users to report bugs with images and descriptions. The app integrates with Google Sign-In for authentication and uses the Imgur API to upload images. Once a bug is reported, the details are saved in a Google Sheet, including the bug ID, reporter's email, name, image URL, and description. Additionally, the app organizes bug reports into daily sheets. If a sheet tab with the current day's date does not exist, it automatically creates one.
