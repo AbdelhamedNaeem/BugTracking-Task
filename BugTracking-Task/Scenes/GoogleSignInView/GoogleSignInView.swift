@@ -12,6 +12,7 @@ struct GoogleSignInView: View {
     @ObservedObject var viewModel: GoogleSignInViewModel
     @State private var isUserSignedIn: Bool = UserDefaultsManager().isUserSignedIn()
     let userDefaultManager: UserDefaultsManaging = UserDefaultsManager()
+    @State private var sharedImage: UIImage? = nil
 
     init(viewModel: GoogleSignInViewModel) {
         self.viewModel = viewModel
@@ -90,12 +91,23 @@ struct GoogleSignInView: View {
                 }
             }
         }
+        .onOpenURL { url in
+            handleIncomingURL(url)
+        }
     }
 
     private func handleGoogleSignIn() {
         Task {
             await viewModel.signIn()
             isUserSignedIn = true
+        }
+    }
+    
+    private func handleIncomingURL(_ url: URL) {
+        if let imageData = try? Data(contentsOf: url),
+           let image = UIImage(data: imageData) {
+            sharedImage = image
+            viewModel.isSignedIn = true
         }
     }
 }

@@ -17,5 +17,17 @@
 	</array>
 	<key>GIDClientID</key>
 	<string>502768480059-bphgkefuc45qmjur3ggfg4aobirg582d.apps.googleusercontent.com</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLName</key>
+            <string>personal.BugTrackingApp</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>bugtracking</string>
+            </array>
+        </dict>
+    </array>
+
 </dict>
 </plist>

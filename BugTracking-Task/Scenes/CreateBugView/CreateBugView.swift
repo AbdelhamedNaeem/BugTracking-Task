@@ -21,10 +21,11 @@ struct CreateBugView: View {
         return userdefaultManager.loadUser()?.name ?? ""
     }
     
-    init(viewModel: CreateBugViewModel) {
+    init(viewModel: CreateBugViewModel, sharedImage: UIImage? = nil) {
         self.viewModel = viewModel
+        self._selectedImage = State(initialValue: sharedImage) 
     }
-    
+
     var body: some View {
         ZStack {
             VStack {
