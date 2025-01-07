@@ -32,6 +32,9 @@ extension HttpClient{
         var request = URLRequest(url: url)
         request.httpMethod = endPoint.method.rawValue
         request.allHTTPHeaderFields = endPoint.header
+        if let body = endPoint.body {
+            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
+        }
         return request
     }
     
@@ -52,6 +55,7 @@ extension HttpClient{
                             return continuation.resume(throwing: RequestError.noResponse)
                         }
                         guard let data = data else { return }
+
                         do {
                             switch response.statusCode {
                             case 200...299:

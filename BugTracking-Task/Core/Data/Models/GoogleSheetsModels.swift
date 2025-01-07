@@ -41,3 +41,5 @@ struct AddSheetProperties: Codable {
 struct AppendDataRequest: Codable {
     let values: [[String]]
 }
+
+struct NoResponse: Decodable {}

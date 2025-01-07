@@ -31,7 +31,7 @@ class GoogleSignInViewModel: ObservableObject {
             let user = try await self.googleSignInUseCase.execute(0)
             print("Signed in user: \(user?.email ?? "")")
             print("Signed in user token: \(user?.accessToken ?? "")")
-
+            navigationState = .createBug
             await MainActor.run {
                 isLoading = false
             }

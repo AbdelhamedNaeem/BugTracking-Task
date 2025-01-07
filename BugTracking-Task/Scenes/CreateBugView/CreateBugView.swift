@@ -15,7 +15,7 @@ struct CreateBugView: View {
     @State private var isImagePickerPresented: Bool = false
     @State private var showActionSheet: Bool = false
     @State private var imageSource: UIImagePickerController.SourceType = .photoLibrary
-
+    
     var userName: String {
         let userdefaultManager: UserDefaultsManaging = UserDefaultsManager()
         return userdefaultManager.loadUser()?.name ?? ""
@@ -31,11 +31,11 @@ struct CreateBugView: View {
                 HStack {
                     Text("Hello, \(userName)")
                         .bold()
-
+                    
                     Spacer()
                 }
                 .padding()
-
+                
                 // Selected Image
                 if let selectedImage = selectedImage {
                     Image(uiImage: selectedImage)
@@ -57,7 +57,7 @@ struct CreateBugView: View {
                         }
                         .padding(.horizontal)
                 }
-
+                
                 // Bug Description
                 ZStack(alignment: .topLeading) {
                     // TextEditor
@@ -68,7 +68,7 @@ struct CreateBugView: View {
                             RoundedRectangle(cornerRadius: 8)
                                 .stroke(Color.gray, lineWidth: 1)
                         )
-
+                    
                     // Placeholder
                     if bugDescription.isEmpty {
                         Text("Describe the bug...")
@@ -78,9 +78,9 @@ struct CreateBugView: View {
                     }
                 }
                 .padding(.horizontal)
-
+                
                 Spacer()
-
+                
                 // Submit Button
                 Button(action: submitBug) {
                     Text("Submit Bug")
@@ -114,17 +114,12 @@ struct CreateBugView: View {
     }
     
     private func submitBug() {
-        Task {
-            if let image = selectedImage {
-                do {
-                    try await viewModel.uploadBugImage(image: image)
-                } catch {
-                    print(error)
-                }
-            }
+        if let image = selectedImage {
+            viewModel.uploadBugData(image: image, description: bugDescription)
         }
     }
 }
+
 
 #Preview {
     DependencyManager.createBugView()

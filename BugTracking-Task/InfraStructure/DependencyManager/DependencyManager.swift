@@ -23,8 +23,11 @@ enum DependencyManager {
     
     static func createBugView() -> some View{
         let imgurRepository = ImgurRepository()
+        let googleSheetsRepository = GoogleSheetsRepository()
         let uploadImageUseCase = UploadImageUseCase(imageRepository: imgurRepository)
-        let createBugViewModel = CreateBugViewModel(uploadImageUseCase: uploadImageUseCase)
+        let uploadBugUseCase = UploadBugDataUseCase(repository: googleSheetsRepository)
+        let createBugViewModel = CreateBugViewModel(uploadImageUseCase: uploadImageUseCase,
+                                                    uploadBugDataUseCase: uploadBugUseCase)
         
         return CreateBugView(viewModel: createBugViewModel)
     }
