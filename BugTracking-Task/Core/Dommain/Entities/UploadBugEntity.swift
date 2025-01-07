@@ -26,7 +26,7 @@ class UploadBugEntity {
     init(bugDescription: String, bugImage: String) {
         self.bugId = UploadBugEntity.generateBugID(userDefaultsManager: userDefaultsManager)
         self.bugDescription = bugDescription
-        self.bugReporter = userDefaultsManager.loadUser()?.name ?? ""
+        self.bugReporter = (userDefaultsManager.loadUser()?.name ?? "") + " / " + (userDefaultsManager.loadUser()?.email ?? "")
         self.bugImage = bugImage
         self.sheetId = "11Hu4FtZfXzoEqLt6rtlDQx-7ndE5du-doeuMtPStWkc"
     }

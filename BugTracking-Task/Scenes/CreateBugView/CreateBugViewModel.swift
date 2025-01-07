@@ -38,16 +38,13 @@ class CreateBugViewModel: ObservableObject {
                 try await uploadBugDataUseCase.execute(createdBug)
                 await MainActor.run {
                     isUploadSuccessful = true
+                    isLoading = false
                 }
             } catch let error {
                 await MainActor.run {
                     errorMessage = error.localizedDescription 
+                    isLoading = false
                 }
-                print("Error: \(error.localizedDescription)")
-            }
-            
-            await MainActor.run {
-                isLoading = false
             }
         }
     }

@@ -25,6 +25,8 @@ class GoogleSignInViewModel: ObservableObject {
         }
         do{
             let user = try await self.googleSignInUseCase.execute(0)
+            print("Signed in user: \(user?.email ?? "")")
+            print("Signed in user token: \(user?.accessToken ?? "")")
             await MainActor.run {
                 isLoading = false
                 isSignedIn = true
