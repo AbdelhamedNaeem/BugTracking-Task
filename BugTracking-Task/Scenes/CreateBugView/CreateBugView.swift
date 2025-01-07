@@ -81,18 +81,24 @@ struct CreateBugView: View {
                 
                 Spacer()
                 
-                // Submit Button
-                Button(action: submitBug) {
-                    Text("Submit Bug")
-                        .bold()
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
+                if viewModel.isLoading {
+                    ProgressView {
+                        Text("Loading...")
+                    }
+                }else {
+                    // Submit Button
+                    Button(action: submitBug) {
+                        Text("Submit Bug")
+                            .bold()
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                    }
+                    .disabled(bugDescription.isEmpty || selectedImage == nil)
                 }
-                .disabled(bugDescription.isEmpty || selectedImage == nil)
             }
             .actionSheet(isPresented: $showActionSheet) {
                 ActionSheet(title: Text("Select Image"), buttons: [
@@ -109,12 +115,34 @@ struct CreateBugView: View {
             }
             .sheet(isPresented: $isImagePickerPresented) {
                 ImagePicker(sourceType: imageSource, selectedImage: $selectedImage)
+            }       
+            .alert(isPresented: .constant(viewModel.isUploadSuccessful || viewModel.errorMessage != nil)) {
+                if viewModel.isUploadSuccessful {
+                    return Alert(
+                        title: Text("Success"),
+                        message: Text("Bug uploaded successfully!"),
+                        dismissButton: .default(Text("OK")) {
+                            viewModel.isUploadSuccessful = false
+                            selectedImage = nil
+                            bugDescription = ""
+                        }
+                    )
+                } else {
+                    return Alert(
+                        title: Text("Error"),
+                        message: Text(viewModel.errorMessage ?? "An unknown error occurred"),
+                        dismissButton: .default(Text("OK")) {
+                            viewModel.errorMessage = nil // Reset error state
+                        }
+                    )
+                }
             }
         }
     }
+
     
     private func submitBug() {
-        if let image = selectedImage {
+        if let image = selectedImage, !bugDescription.isEmpty {
             viewModel.uploadBugData(image: image, description: bugDescription)
         }
     }

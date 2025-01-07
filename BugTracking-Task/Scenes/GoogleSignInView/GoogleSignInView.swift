@@ -18,6 +18,13 @@ struct GoogleSignInView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                NavigationLink(
+                    destination: DependencyManager.createBugView(),
+                    isActive: $viewModel.isSignedIn
+                ) {
+                    EmptyView()
+                }
+
                 VStack {
                     Spacer()
 
@@ -36,6 +43,15 @@ struct GoogleSignInView: View {
                     Spacer()
                 }
                 .padding()
+                .alert(isPresented: .constant(viewModel.errorMessage != nil)) {
+                    Alert(
+                        title: Text("Error"),
+                        message: Text(viewModel.errorMessage ?? "An unknown error occurred"),
+                        dismissButton: .default(Text("OK")) {
+                            viewModel.errorMessage = nil
+                        }
+                    )
+                }
             }
         }
     }

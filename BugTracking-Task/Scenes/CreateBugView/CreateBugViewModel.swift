@@ -10,6 +10,8 @@ import UIKit.UIImage
 class CreateBugViewModel: ObservableObject {
     
     @Published var isLoading: Bool = false
+    @Published var isUploadSuccessful: Bool = false // Track success
+    @Published var errorMessage: String? = nil // Track errors
 
     let uploadImageUseCase: UploadImageUseCase
     let uploadBugDataUseCase: UploadBugDataUseCase
@@ -34,7 +36,13 @@ class CreateBugViewModel: ObservableObject {
                 let imageUrl = try await self.uploadBugImage(image: image)
                 let createdBug = UploadBugEntity(bugDescription: description, bugImage: imageUrl ?? "")
                 try await uploadBugDataUseCase.execute(createdBug)
-            } catch {
+                await MainActor.run {
+                    isUploadSuccessful = true
+                }
+            } catch let error {
+                await MainActor.run {
+                    errorMessage = error.localizedDescription 
+                }
                 print("Error: \(error.localizedDescription)")
             }
             
