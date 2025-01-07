@@ -1,4 +1,4 @@
-Bug Reporter App
+Bug Tracking App
 
 google sheet link: https://docs.google.com/spreadsheets/d/11Hu4FtZfXzoEqLt6rtlDQx-7ndE5du-doeuMtPStWkc/edit?gid=2128539032#gid=2128539032
 
