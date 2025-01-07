@@ -9,14 +9,9 @@ import SwiftUI
 
 @main
 struct BugTracking_TaskApp: App {
-    let userDefaultManager: UserDefaultsManaging = UserDefaultsManager()
     var body: some Scene {
         WindowGroup {
-            if userDefaultManager.isUserSignedIn() {
-                DependencyManager.createBugView()
-            }else {
-                DependencyManager.createGoogleSignInView()
-            }
+            DependencyManager.createGoogleSignInView()
         }
     }
 }

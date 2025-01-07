@@ -10,6 +10,8 @@ import SwiftUI
 struct GoogleSignInView: View {
     
     @ObservedObject var viewModel: GoogleSignInViewModel
+    @State private var isUserSignedIn: Bool = UserDefaultsManager().isUserSignedIn()
+    let userDefaultManager: UserDefaultsManaging = UserDefaultsManager()
 
     init(viewModel: GoogleSignInViewModel) {
         self.viewModel = viewModel
@@ -28,7 +30,7 @@ struct GoogleSignInView: View {
                 VStack {
                     Spacer()
 
-                    Text("Welcome to Bug Tracking App")
+                    Text("Welcome \(userDefaultManager.loadUser()?.name ?? "") to Bug Tracking App")
                         .font(.title)
                         .padding()
                                 
@@ -36,8 +38,42 @@ struct GoogleSignInView: View {
                         ProgressView("Loading...")
                             .padding()
                     } else {
-                        GoogleSignInButton(action: handleGoogleSignIn)
-                            .padding(.horizontal, 40)
+                        if isUserSignedIn {
+                            HStack {
+                                Button(action: {
+                                    viewModel.isSignedIn = true
+                                    isUserSignedIn = true
+                                }, label: {
+                                    Text("Create Bug")
+                                        .bold()
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color.blue)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(10)
+                                        .padding(.horizontal)
+                                })
+                                
+                                Button(action: {
+                                    userDefaultManager.removeUser()
+                                    isUserSignedIn = false
+                                }, label: {
+                                    Text("Sign Out")
+                                        .bold()
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(Color.red)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(10)
+                                        .padding(.horizontal)
+                                })
+
+                            }
+                            
+                        }else {
+                            GoogleSignInButton(action: handleGoogleSignIn)
+                                .padding(.horizontal, 40)
+                        }
                     }
 
                     Spacer()
@@ -59,6 +95,7 @@ struct GoogleSignInView: View {
     private func handleGoogleSignIn() {
         Task {
             await viewModel.signIn()
+            isUserSignedIn = true
         }
     }
 }
